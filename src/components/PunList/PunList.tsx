@@ -22,7 +22,13 @@ interface Props {
 }
 
 const PunItem: React.FC<Props> = ({punData}) => {
-    return <li>{punData.text}</li>;
+    const date: string = punData.date.toString();
+    return (
+      <li>
+        {punData.text}<br/>
+        {date}
+      </li>
+    );
 }
 
 export default PunList;
