@@ -1,18 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { PunSingle } from '../../utils/types'
 
-function PunList(dataList: any) {
+const initialPunCollection: PunSingle[] = [
+  {
+    id: 1,
+    text: 'ohayo',
+    date: new Date(),
+  }
+];
+
+function PunList() {
+  const [punCollection, setPunCollection] = useState(initialPunCollection);
   return (
     <ul>
-        {
-            dataList.map((item: any, index: number) => {
-                return <PunItem punData={item} key={index}  />
-            })
-        }
+      <PunItem punData={punCollection[0]} />
     </ul>
   );
 }
+interface Props {
+  punData: PunSingle
+}
 
-function PunItem(punData: any) {
+const PunItem: React.FC<Props> = ({punData}) => {
     return <li>{punData.text}</li>;
 }
 
