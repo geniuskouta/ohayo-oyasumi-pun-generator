@@ -6,8 +6,8 @@ interface ChildrenProps {
 
 export function PunGenerator ({children}: ChildrenProps) {
     return (
-        <>
+        <div className="pungenerator">
             {children}
-        </>
+        </div>
     );
 }

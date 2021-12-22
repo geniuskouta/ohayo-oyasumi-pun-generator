@@ -28,11 +28,13 @@ function App() {
     <>
       <PunGenerator>
         <PunGeneratorDisplay newPun={newPun} />
-        <PunGeneratorButtonCreate setNewPun={setNewPun} />
-        <PunGeneratorButtonSave
-        newPun={newPun}
-        punCollection={punCollection}
-        setPunCollection={setPunCollection} />
+        <nav className="pungenerator-action-button-list">
+          <PunGeneratorButtonCreate setNewPun={setNewPun} />
+          <PunGeneratorButtonSave
+          newPun={newPun}
+          punCollection={punCollection}
+          setPunCollection={setPunCollection} />
+        </nav>
       </PunGenerator>
       <PunList punCollection={punCollection} />
     </>

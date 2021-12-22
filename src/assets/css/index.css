@@ -1,0 +1,75 @@
+body {
+    font-family: "Gill Sans", sans-serif;
+    background-color: #FECC2B;
+}
+
+#root {
+    background-color: #FFF8F4;
+    border-radius: 10px;
+    box-shadow: 10px 10px 0 #6C1838;
+    max-width: 420px;
+    padding: 20px;
+    margin: 30px auto 0;
+}
+
+.pungenerator {
+
+}
+
+.pungenerator-display {
+    color: #6C1838;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #00D2BF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    box-sizing: border-box;
+    min-height: 200px;
+    padding: 10px;
+}
+
+.pungenerator-action-button-list {
+    font-size: 0;
+    padding: 10px 0 20px;
+}
+
+.pungenerator-action-button {
+    color: #6C1838;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #FFF8F4;
+    display: inline-block;
+    border: 2px solid #6C1838;
+    border-radius: 2px;
+    min-width: 42px;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.pungenerator-action-button:nth-child(n + 2) {
+    margin-left: 8px;
+}
+
+.punlist-item {
+    border-bottom: 2px solid #6C1838;
+    padding: 0 4px 10px;
+}
+
+.punlist-item-text {
+    color: #6C1838;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.punlist-item-date {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.punlist-item:nth-child(n + 2) {
+    margin-top: 20px;
+}

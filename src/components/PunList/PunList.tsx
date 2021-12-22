@@ -1,4 +1,5 @@
 import { PunSingle } from '../../utils/types'
+import { getPunDate } from '../../utils/date';
 
 interface ListProps {
   punCollection: PunSingle[],
@@ -21,11 +22,11 @@ function PunList({punCollection}: ListProps) {
 }
 
 const PunItem = ({punData}: ItemProps) => {
-    const date: string = punData.date.toString();
+    const date: string = getPunDate(punData.date);
     return (
-      <li>
-        {punData.text}<br/>
-        {date}
+      <li className="punlist-item">
+        <div className="punlist-item-text">{punData.text}</div>
+        <div className="punlist-item-date">{date}</div>
       </li>
     );
 }

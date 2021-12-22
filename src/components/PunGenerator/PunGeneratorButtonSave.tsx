@@ -8,7 +8,9 @@ interface ButtonProps {
 
 export function PunGeneratorButtonSave ({newPun, punCollection, setPunCollection}: ButtonProps) {
     return (
-        newPun && <a onClick={() => {
+        newPun && <a
+        className="pungenerator-action-button"
+        onClick={() => {
             setPunCollection([newPun, ...punCollection])
         }}>Save</a>
     );

@@ -15,7 +15,7 @@ const newPun: PunSingle = {
 
 export function PunGeneratorButtonCreate ({setNewPun}: ButtonProps) {
     return (
-        <a onClick={() => {
+        <a className="pungenerator-action-button" onClick={() => {
             setNewPun(newPun)
         }}>Generate</a>
     );
