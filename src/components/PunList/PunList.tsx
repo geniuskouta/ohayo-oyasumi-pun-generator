@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import { PunSingle } from '../../utils/types'
 
 interface ListProps {
@@ -8,7 +7,6 @@ interface ListProps {
 interface ItemProps {
   punData: PunSingle
 }
-
 
 function PunList({punCollection}: ListProps) {
   return (
