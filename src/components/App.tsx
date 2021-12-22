@@ -21,7 +21,7 @@ const initialPunCollection: PunSingle[] = [
 ];
 
 function App() {
-  const [punCollection, setPunCollection] = useState(initialPunCollection);
+  const [punCollection, setPunCollection] = useState<PunSingle[] | []>([]);
   const [newPun, setNewPun] = useState<PunSingle | null>(null);
 
   return (

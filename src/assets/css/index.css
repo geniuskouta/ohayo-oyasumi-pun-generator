@@ -1,5 +1,6 @@
 body {
     font-family: "Gill Sans", sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     background-color: #FECC2B;
 }
 
@@ -12,13 +13,23 @@ body {
     margin: 30px auto 0;
 }
 
+@media screen and (max-width: 490px) {
+    body {
+        background-color: #FFF8F4;
+    }
+
+    #root {
+        box-shadow: none;    
+    }
+}
+
 .pungenerator {
 
 }
 
 .pungenerator-display {
-    color: #6C1838;
-    font-size: 24px;
+    color: #333333;
+    font-size: 30px;
     font-weight: bold;
     background-color: #00D2BF;
     display: flex;
@@ -61,7 +72,7 @@ body {
 
 .punlist-item-text {
     color: #6C1838;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
 }
 
