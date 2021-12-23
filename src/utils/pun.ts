@@ -15,3 +15,7 @@ export function otsukarePun(): string {
 
     return ohayoArray[index];
 }
+
+export const savePunToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+}

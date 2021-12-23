@@ -24,7 +24,8 @@ body {
 }
 
 .pungenerator-display {
-    color: #333333;
+    font-family: 'DotGothic16', sans-serif;
+    color: #FFF8F4;
     font-size: 30px;
     font-weight: bold;
     background-color: #00D2BF;
@@ -71,14 +72,28 @@ body {
 }
 
 .punlist-item {
+    position: relative;
     border-bottom: 2px solid #6C1838;
-    padding: 0 4px 10px;
+    padding: 6px 4px 10px;
+    cursor: pointer;
+    transition: background-color 0.1s, color 0.1s;
+    user-select: none;
 }
 
 .punlist-item-text {
     color: #6C1838;
     font-size: 16px;
     font-weight: bold;
+    transition: color 0.1s;
+}
+
+.punlist-item:hover {
+    color: #ffffff;
+    background-color: #6C1838;
+}
+
+.punlist-item:hover .punlist-item-text {
+    color: #ffffff;
 }
 
 .punlist-item-date {
@@ -88,4 +103,20 @@ body {
 
 .punlist-item:nth-child(n + 2) {
     margin-top: 20px;
+}
+
+.punlist-item-notification-clipboard {
+    color: #FFF8F4;
+    font-size: 14px;
+    top: 0;
+    right: 0;
+    display: block;
+    position: absolute;
+    background-color: #FECC2B;
+    padding: 4px 10px;
+    transition: opacity 0.2s;
+}
+
+.punlist-item-notification-clipboard-hidden {
+    opacity: 0;
 }
