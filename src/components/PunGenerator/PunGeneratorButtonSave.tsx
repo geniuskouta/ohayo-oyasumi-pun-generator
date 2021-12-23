@@ -11,7 +11,8 @@ export function PunGeneratorButtonSave ({newPun, punCollection, setPunCollection
         newPun && <a
         className="pungenerator-action-button"
         onClick={() => {
-            setPunCollection([newPun, ...punCollection])
+            punCollection = punCollection.filter(item => item.id !== newPun.id);
+            setPunCollection([newPun, ...punCollection]);
         }}>Save</a>
     );
 }
