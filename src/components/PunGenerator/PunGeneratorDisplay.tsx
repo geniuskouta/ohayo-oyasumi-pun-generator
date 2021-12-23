@@ -8,7 +8,7 @@ export function PunGeneratorDisplay ({newPun}: DispayProps) {
     return (
         <div className="pungenerator-display">
             {
-                newPun && newPun.text
+                newPun ? newPun.text : 'おつかれさま'
             }
         </div>
     );

@@ -1,9 +1,17 @@
+let index = 0;
+
 export function otsukarePun(): string {
-    const index = Math.floor(Math.random() * 3);
     const ohayoArray = [
         'おつかれーらいす',
         'おつかれーとうしょくひん',
         'おつかれさまー',
     ];
+
+    if(index < ohayoArray.length - 1) {
+        index++;
+    } else {
+        index = 0;
+    }
+
     return ohayoArray[index];
 }

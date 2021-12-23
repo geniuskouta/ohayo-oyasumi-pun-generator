@@ -43,4 +43,23 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    // shrink screen
+    var baseW = 375;
+    function updateMetaViewport() {
+        var viewportContent;
+        var w = window.outerWidth;
+        if (w < baseW) {
+            viewportContent = "width=" + baseW + ",minimum-scale=0.8,maximum-scale=1, user-scalable=no";
+        } else {
+            viewportContent = "width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no";
+        }
+        document.querySelector("meta[name='viewport']").setAttribute("content", viewportContent);
+    }
+    window.addEventListener("resize", updateMetaViewport, false);
+    window.addEventListener("orientationchange", updateMetaViewport, false);
+    var ev = document.createEvent("UIEvent");
+    ev.initEvent("resize", true, true);
+    window.dispatchEvent(ev);
+  </script>
 </html>

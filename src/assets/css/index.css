@@ -15,11 +15,7 @@ body {
 
 @media screen and (max-width: 490px) {
     body {
-        background-color: #FFF8F4;
-    }
-
-    #root {
-        box-shadow: none;    
+        padding: 0 18px 0 8px;
     }
 }
 
@@ -50,15 +46,24 @@ body {
     color: #6C1838;
     font-size: 16px;
     font-weight: bold;
+    line-height: 24px;
     text-align: center;
     background-color: #FFF8F4;
     display: inline-block;
     border: 2px solid #6C1838;
     border-radius: 2px;
     min-width: 42px;
-    padding: 4px 8px;
+    padding: 0 8px;
     box-sizing: border-box;
+    box-shadow: 2px 2px 0 #6C1838;
     cursor: pointer;
+    user-select: none;
+    transition: box-shadow 0.1s;
+}
+
+.pungenerator-action-button:active {
+    box-shadow: inset 1px 1px 1px #6C1838,
+                0px 0px 0 #6C1838;
 }
 
 .pungenerator-action-button:nth-child(n + 2) {

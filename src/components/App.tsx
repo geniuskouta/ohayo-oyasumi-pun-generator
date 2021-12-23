@@ -7,19 +7,6 @@ import { PunGeneratorButtonCreate } from './PunGenerator/PunGeneratorButtonCreat
 import { PunGeneratorButtonSave } from './PunGenerator/PunGeneratorButtonSave';
 import { PunGeneratorDisplay } from './PunGenerator/PunGeneratorDisplay';
 
-const initialPunCollection: PunSingle[] = [
-  {
-    id: 1,
-    text: 'ohayo',
-    date: new Date(),
-  },
-  {
-    id: 2,
-    text: 'kimaaa',
-    date: new Date(),
-  },
-];
-
 function App() {
   const [punCollection, setPunCollection] = useState<PunSingle[] | []>([]);
   const [newPun, setNewPun] = useState<PunSingle | null>(null);
