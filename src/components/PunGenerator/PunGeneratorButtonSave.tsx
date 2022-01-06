@@ -1,4 +1,5 @@
 import { PunSingle, Nullable, Dispatcher } from '../../utils/types'
+import { savePunToLocalStorage } from '../../utils/pun'
 
 interface ButtonProps {
     newPun: Nullable<PunSingle>,
@@ -13,6 +14,7 @@ export function PunGeneratorButtonSave ({newPun, punCollection, setPunCollection
         onClick={() => {
             punCollection = punCollection.filter(item => item.id !== newPun.id);
             setPunCollection([newPun, ...punCollection]);
+            savePunToLocalStorage('otsukare', newPun);
         }}>Save</a>
     );
 }

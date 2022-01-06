@@ -28,7 +28,7 @@ function PunList({punCollection}: ListProps) {
 }
 
 const PunItem = ({punData}: ItemProps) => {
-    const date: string = getPunDate(punData.date);
+    const date: string = punData.date ? getPunDate(punData.date) : '';
     const [isCopied, setCopied] = useState<Boolean>(false);
     const [isNotificationHidden, setNotificationHidden] = useState<Boolean>(false);
 
