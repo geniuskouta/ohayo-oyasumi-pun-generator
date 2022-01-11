@@ -1,6 +1,7 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import PunList from './PunList/PunList'
 import { PunSingle } from '../utils/types'
+import { getPunFromLocalStorage } from '../utils/pun';
 
 import { PunGenerator } from './PunGenerator/PunGenerator';
 import { PunGeneratorButtonCreate } from './PunGenerator/PunGeneratorButtonCreate';
@@ -10,6 +11,13 @@ import { PunGeneratorDisplay } from './PunGenerator/PunGeneratorDisplay';
 function App() {
   const [punCollection, setPunCollection] = useState<PunSingle[] | []>([]);
   const [newPun, setNewPun] = useState<PunSingle | null>(null);
+
+  useEffect(() => {
+      let punList = getPunFromLocalStorage('otsukare');
+      if(punList) {
+        setPunCollection(punList);
+      }
+  }, []);
 
   return (
     <>

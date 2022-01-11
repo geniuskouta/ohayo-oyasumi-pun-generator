@@ -14,8 +14,16 @@ export function pickOtsukarePun(): PunSingle {
     return otsukareArray[index];
 }
 
-export const savePunToClipboard = (text: string) => {
+export const savePunToClipboard = (text: string) : PunSingle[] | void => {
     navigator.clipboard.writeText(text);
+}
+
+export const getPunFromLocalStorage = (key: string) => {
+    let storageExists: boolean = localStorage.getItem(key) ? true : false;
+    if(storageExists) {
+        let punList = localStorage.getItem(key) || '';
+        return JSON.parse(punList);
+    }
 }
 
 export const savePunToLocalStorage = (key: string, pun: PunSingle): void => {
@@ -29,7 +37,6 @@ export const savePunToLocalStorage = (key: string, pun: PunSingle): void => {
 
     const savePun = () => {
         let punList: any = localStorage.getItem(key);
-        console.log(punList)
         punList = JSON.parse(punList);
         punList = punList.filter((item: any) => item.id !== pun.id);
         punList.push(pun);
