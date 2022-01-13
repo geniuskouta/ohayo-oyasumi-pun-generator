@@ -87,6 +87,11 @@ body {
     user-select: none;
 }
 
+.punlist-item-text,
+.punlist-item-date {
+    max-width: calc(100% - 40px);
+}
+
 .punlist-item-text {
     color: #6C1838;
     font-size: 16px;
@@ -94,12 +99,12 @@ body {
     transition: color 0.1s;
 }
 
-.punlist-item:hover {
+.punlist-item-clicked {
     color: #ffffff;
     background-color: #6C1838;
 }
 
-.punlist-item:hover .punlist-item-text {
+.punlist-item-text-clicked {
     color: #ffffff;
 }
 
@@ -110,6 +115,22 @@ body {
 
 .punlist-item:nth-child(n + 2) {
     margin-top: 20px;
+}
+
+.punlist-item-delete-button {
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 10px;
+    padding: 4px;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.punlist-item-delete-button-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .punlist-item-notification-clipboard {

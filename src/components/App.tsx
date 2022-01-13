@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import PunList from './PunList/PunList'
+import PunItem from './PunList/PunItem';
 import { PunSingle } from '../utils/types'
 import { getPunFromLocalStorage } from '../utils/pun';
 
@@ -31,7 +32,18 @@ function App() {
           setPunCollection={setPunCollection} />
         </nav>
       </PunGenerator>
-      <PunList punCollection={punCollection} />
+      <ul>
+        {/* avoid props drilling by not making PunList component here */}
+        {
+          punCollection.map(punData => {
+            return <PunItem
+            punData={punData}
+            punCollection={punCollection}
+            setPunCollection={setPunCollection}
+            />
+          })
+        }
+      </ul>
     </>
   );
 }
