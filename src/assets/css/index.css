@@ -11,6 +11,13 @@ body {
     max-width: 420px;
     padding: 20px;
     margin: 30px auto;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+#root::-webkit-scrollbar {
+    display: none;
 }
 
 @media screen and (max-width: 490px) {
