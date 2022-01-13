@@ -2,16 +2,20 @@ import { PunSingle } from './types'
 import punData from '../data/pun.json'
 
 const otsukareArray = punData.otsukare;
-let index = 0;
+let randomIndex = getRandomIndex(otsukareArray);
+
+function getRandomIndex(list: PunSingle[]) {
+    return Math.floor(Math.random() * list.length)
+}
 
 export function pickOtsukarePun(): PunSingle {
-    if(index < otsukareArray.length - 1) {
-        index++;
-    } else {
-        index = 0;
+    let prevRandomIndex = randomIndex;
+    randomIndex = getRandomIndex(otsukareArray);
+    if(prevRandomIndex === randomIndex) {
+        let maxIndex = randomIndex === otsukareArray.length - 1;
+        randomIndex =  maxIndex ? randomIndex - 1 : randomIndex + 1;
     }
-
-    return otsukareArray[index];
+    return otsukareArray[randomIndex];
 }
 
 export const savePunToClipboard = (text: string) : PunSingle[] | void => {
