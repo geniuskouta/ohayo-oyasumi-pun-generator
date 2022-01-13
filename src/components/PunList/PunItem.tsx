@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { PunSingle, Dispatcher } from '../../utils/types'
 import { getPunDate } from '../../utils/date';
-import { savePunToClipboard } from '../../utils/pun';
+import { savePunToClipboard, updatePunListToLocalStorage } from '../../utils/pun';
 import { ReactComponent as PunDeleteIcon } from '../../assets/icon/trash-alt-regular_6C1838.svg'
+
 
 interface ItemProps {
     punData: PunSingle,
@@ -68,7 +69,7 @@ const PunDeleteButton = ({ punData, punCollection, setPunCollection }: DeleteBut
             onClick={() => {
                 punCollection = punCollection.filter(item => item.id !== punData.id);
                 setPunCollection([...punCollection]);
-                
+                updatePunListToLocalStorage('otsukare', punCollection)
             }}
         >
             <PunDeleteIcon className="punlist-item-delete-button-icon" />

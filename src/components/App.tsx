@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react';
-import PunList from './PunList/PunList'
 import PunItem from './PunList/PunItem';
 import { PunSingle } from '../utils/types'
 import { getPunFromLocalStorage } from '../utils/pun';

@@ -30,20 +30,8 @@ export const getPunFromLocalStorage = (key: string) => {
     }
 }
 
-export const savePunToLocalStorage = (key: string, pun: PunSingle): void => {
-    let storageExists: boolean = localStorage.getItem(key) ? true : false;
-
-    const initializePunList = () => {
-        let punList = [];
-        punList.push(pun)
-        localStorage.setItem(key, JSON.stringify(punList));
-    }
-
-    const savePun = () => {
-        let punList: any = localStorage.getItem(key);
-        punList = JSON.parse(punList);
-        punList = punList.filter((item: any) => item.id !== pun.id);
-        punList.push(pun);
+export const updatePunListToLocalStorage = (key: string, punList: PunSingle[]): void => {
+    const savePunList = () => {
         localStorage.setItem(key, JSON.stringify(punList));
     }
 
@@ -51,10 +39,7 @@ export const savePunToLocalStorage = (key: string, pun: PunSingle): void => {
         case 'otsukare':
         case 'ohayo':
         case 'oyasumi':
-            if(!storageExists) {
-                initializePunList();
-            }
-            savePun();
+            savePunList();
             break;
         default:
             return ;
