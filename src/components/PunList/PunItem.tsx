@@ -28,24 +28,28 @@ const PunItem = ({ punData, punCollection, setPunCollection }: ItemProps) => {
 
     return (
         <li
-            className={"punlist-item"}
-            key={'punlist-item-' + punData.id}
-            onClick={() => {
-                if (!isCopied) {
-                    savePunToClipboard(punData.text);
-                    setCopied(true);
-                    setTimeout(() => {
-                        setNotificationHidden(true);
-                    }, 1000);
-                    setTimeout(() => {
-                        setNotificationHidden(false);
-                        setCopied(false);
-                    }, 1200);
-                }
-            }}>
-            <div className="punlist-item-text">{punData.text}</div>
-            <div className="punlist-item-date">{date}</div>
-            <PunDeleteButton punData={punData} punCollection={punCollection} setPunCollection={setPunCollection} />
+        className={!isCopied ? "punlist-item" : "punlist-item punlist-item-clicked"}
+        key={'punlist-item-' + punData.id}>
+                <div
+                className="punlist-item-content"
+                onClick={() => {
+                    if (!isCopied) {
+                        savePunToClipboard(punData.text);
+                        setCopied(true);
+                        setTimeout(() => {
+                            setNotificationHidden(true);
+                        }, 1000);
+                        setTimeout(() => {
+                            setNotificationHidden(false);
+                            setCopied(false);
+                        }, 1200);
+                    }
+                }}
+                >
+                    <div className="punlist-item-text">{punData.text}</div>
+                    <div className="punlist-item-date">{date}</div>
+                </div>
+            {!isCopied && <PunDeleteButton punData={punData} punCollection={punCollection} setPunCollection={setPunCollection} />}
             {isCopied && <PunItemNotificationClipboard isNotificationHidden={isNotificationHidden} />}
         </li>
     );

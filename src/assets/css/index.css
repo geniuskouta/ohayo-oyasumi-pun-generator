@@ -82,13 +82,12 @@ body {
     position: relative;
     border-bottom: 2px solid #6C1838;
     padding: 6px 4px 10px;
-    cursor: pointer;
     transition: background-color 0.1s, color 0.1s;
     user-select: none;
 }
 
-.punlist-item-text,
-.punlist-item-date {
+.punlist-item-content {
+    cursor: pointer;
     max-width: calc(100% - 40px);
 }
 
@@ -104,7 +103,7 @@ body {
     background-color: #6C1838;
 }
 
-.punlist-item-text-clicked {
+.punlist-item-clicked .punlist-item-text {
     color: #ffffff;
 }
 
@@ -125,6 +124,7 @@ body {
     width: 30px;
     height: 30px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .punlist-item-delete-button-icon {
