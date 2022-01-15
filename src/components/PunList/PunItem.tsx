@@ -69,8 +69,11 @@ const PunItemNotificationClipboard = ({ isNotificationHidden }: NotificationProp
 
 const PunDeleteButton = ({ punData, punCollection, setPunCollection }: DeleteButtonProps) => {
     return (
-        <a className="punlist-item-delete-button"
-            onClick={() => {
+        <a
+        href="#"
+        className="punlist-item-delete-button"
+            onClick={(e) => {
+                e.preventDefault();
                 punCollection = punCollection.filter(item => item.id !== punData.id);
                 setPunCollection([...punCollection]);
                 updatePunListToLocalStorage('otsukare', punCollection)

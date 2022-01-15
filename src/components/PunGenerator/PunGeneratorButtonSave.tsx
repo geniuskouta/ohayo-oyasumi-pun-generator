@@ -10,8 +10,10 @@ interface ButtonProps {
 export function PunGeneratorButtonSave ({newPun, punCollection, setPunCollection}: ButtonProps) {
     return (
         newPun && <a
+        href="#"
         className="pungenerator-action-button"
-        onClick={() => {
+        onClick={(e) => {
+            e.preventDefault();
             punCollection = punCollection.filter(item => item.id !== newPun.id);
 
             setPunCollection([newPun, ...punCollection]);

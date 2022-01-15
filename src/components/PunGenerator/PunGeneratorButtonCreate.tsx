@@ -12,7 +12,10 @@ export function PunGeneratorButtonCreate ({setNewPun}: ButtonProps) {
     const newPun: PunSingle = pickOtsukarePun();
     newPun.date = new Date();
     return (
-        <a className="pungenerator-action-button" onClick={() => {
+        <a
+        href="#"
+        className="pungenerator-action-button" onClick={(e) => {
+            e.preventDefault();
             setNewPun(newPun)
         }}>Generate</a>
     );

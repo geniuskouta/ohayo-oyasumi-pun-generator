@@ -67,6 +67,7 @@ body {
     cursor: pointer;
     user-select: none;
     transition: box-shadow 0.1s;
+    text-decoration: none;
 }
 
 .pungenerator-action-button:active {
