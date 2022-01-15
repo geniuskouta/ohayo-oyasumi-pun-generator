@@ -59,7 +59,7 @@ const PunItemNotificationClipboard = ({ isNotificationHidden }: NotificationProp
     return (
         <div
             className={
-                isNotificationHidden ? "punlist-item-notification-clipboard " + "punlist-item-notification-clipboard-hidden"
+                isNotificationHidden ? "punlist-item-notification-clipboard punlist-item-notification-clipboard-hidden"
                     : "punlist-item-notification-clipboard"
             }>
             Copied!
