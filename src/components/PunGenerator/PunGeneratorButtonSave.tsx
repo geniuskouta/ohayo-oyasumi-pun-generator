@@ -15,7 +15,7 @@ export function PunGeneratorButtonSave ({newPun, punCollection, setPunCollection
             punCollection = punCollection.filter(item => item.id !== newPun.id);
 
             setPunCollection([newPun, ...punCollection]);
-            updatePunListToLocalStorage('otsukare', punCollection);
+            updatePunListToLocalStorage('otsukare', [newPun, ...punCollection]);
 
         }}>Save</a>
     );
