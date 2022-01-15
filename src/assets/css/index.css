@@ -2,6 +2,9 @@ body {
     font-family: "Gill Sans", sans-serif;
     font-family: 'Noto Sans JP', sans-serif;
     background-color: #FECC2B;
+}
+
+body, html {
     overflow-y: hidden;
 }
 
@@ -19,7 +22,7 @@ body {
 
 @media screen and (max-width: 420px) {
     #root {
-        max-height: calc(95vh - 100px);   
+        max-height: calc(80vh - 100px);   
     }
 }
 
